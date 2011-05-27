@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{ADF714A0-8BDD-36E7-0A8A-F1FBE5D94E4D}") = "InteractionApp", "InteractionApp.csproj", "{61788A08-9356-66E4-E237-08A2CDC1981A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61788A08-9356-66E4-E237-08A2CDC1981A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61788A08-9356-66E4-E237-08A2CDC1981A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61788A08-9356-66E4-E237-08A2CDC1981A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61788A08-9356-66E4-E237-08A2CDC1981A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	
+EndGlobal

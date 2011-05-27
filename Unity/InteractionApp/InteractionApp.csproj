@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{61788A08-9356-66E4-E237-08A2CDC1981A}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace>Irrelevant</RootNamespace>
+	<AssemblyName>Irrelvant</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_3_2_0;UNITY_3_2;UNITY_EDITOR;ENABLE_PROFILER;UNITY_ANDROID;ENABLE_GENERICS;ENABLE_NETWORK;ENABLE_WWW</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity3/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity3/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+	<Reference Include="Boo.Lang">
+	  <HintPath>C:/Program Files (x86)/Unity3/Editor/Data/Mono/lib/mono/unity/Boo.Lang.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityScript">
+	  <HintPath>C:/Program Files (x86)/Unity3/Editor/Data/Mono/lib/mono/unity/UnityScript.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\scripts\app\controller\StartupCommand.cs" />
+     <Compile Include="Assets\scripts\app\plugin\model\PluginProxy.cs" />
+     <Compile Include="Assets\scripts\app\plugin\view\components\PluginComponent.cs" />
+     <Compile Include="Assets\scripts\app\plugin\view\PluginMediator.cs" />
+     <Compile Include="Assets\scripts\app\App.cs" />
+     <Compile Include="Assets\scripts\app\AppConsole.cs" />
+     <Compile Include="Assets\scripts\app\AppFacade.cs" />
+     <Compile Include="Assets\scripts\gui\event\GuiEvent.cs" />
+     <Compile Include="Assets\scripts\gui\event\GuiEventType.cs" />
+     <Compile Include="Assets\scripts\gui\event\GuiKeyEvent.cs" />
+     <Compile Include="Assets\scripts\gui\Button.cs" />
+     <Compile Include="Assets\scripts\gui\GuiDisplayObject.cs" />
+     <Compile Include="Assets\scripts\gui\GuiGroup.cs" />
+     <Compile Include="Assets\scripts\gui\GuiManager.cs" />
+     <Compile Include="Assets\scripts\gui\GuiSimple.cs" />
+     <Compile Include="Assets\scripts\gui\GuiWidget.cs" />
+     <Compile Include="Assets\scripts\input\InputManager.cs" />
+     <Compile Include="Assets\scripts\net\Logger.cs" />
+     <Compile Include="Assets\scripts\plugin\PluginManager.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Core\Controller.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Core\Model.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Core\View.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\ICommand.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IController.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IFacade.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IMediator.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IModel.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\INotification.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\INotifier.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IObserver.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IProxy.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IView.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Command\MacroCommand.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Command\SimpleCommand.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Facade\Facade.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Mediator\Mediator.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Observer\Notification.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Observer\Notifier.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Observer\Observer.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Proxy\Proxy.cs" />
+     <Compile Include="Assets\scripts\tween\iTween.cs" />
+     <Compile Include="Assets\scripts\utils\Tools.cs" />
+ <Reference Include="IPlugin">
+ <HintPath>Assets\dlls\IPlugin.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
+	
