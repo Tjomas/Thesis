@@ -91,6 +91,7 @@ public abstract class GuiDisplayObject
         }
     }
 
+    //this args thing need a complete rework
     private object[] _args;
     private int _rectIndex = 0;
     private int _txtIndex = 0;
