@@ -58,8 +58,8 @@ public class PluginProxy: Proxy , IProxy
 
                     if(plugin != null){
                         Plugins.Add(plugin);
-                     
-                        AppConsole.AddMessage("Plugin loaded" + plugin.ToString());
+                     	
+						SendNotification(NoteConsts.CONSOLE_ADDMESSAGE,new MessageVO("Plugin loaded" + plugin.ToString()));
                     }
                 }
             }

@@ -2,5 +2,6 @@
 {
     CLICK,
     KEY,
-	KEYDOWN
+	KEYDOWN,
+	UPDATE
 } 

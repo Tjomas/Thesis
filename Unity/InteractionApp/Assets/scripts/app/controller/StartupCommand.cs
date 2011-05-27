@@ -16,12 +16,19 @@ public class StartupCommand : SimpleCommand, ICommand
 	/// <param name="note"></param>
 	public override void Execute(INotification note)
 	{
+		//Commands anlegen
+		Facade.RegisterCommand(NoteConsts.CONSOLE_ADDMESSAGE,typeof(AddConsoleCommand));
 	
-		AppConsole.AddMessage("Startup");
-	
+		//Proxies anlegen
+		Facade.RegisterProxy(new ConsoleProxy());
 		Facade.RegisterProxy(new PluginProxy());
+		
+		//Mediatoren anlegen
 		Facade.RegisterMediator(new PluginMediator());
-
+		Facade.RegisterMediator(new ConsoleMediator());
+		
+		//StartupMessage verschicken
+		SendNotification(NoteConsts.CONSOLE_ADDMESSAGE,new MessageVO("StartupCommand done!"));
 	}
 }
 

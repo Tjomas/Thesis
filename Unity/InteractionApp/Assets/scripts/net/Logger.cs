@@ -7,67 +7,72 @@ using UnityEngine;
 
 public class Logger
 {
-  #region Singelton
-
-    private static Logger _instance = null;
-
-    public static Logger I
+	#region StaticNetwork
+	
+	static Logger(){
+		_queue = new List<byte[]>();
+	}
+	
+	private static Socket sock = null;
+    private static string host = "127.0.0.1";
+    private static int port = 4444;
+	private static List<byte[]> _queue;
+	
+	#endregion
+	
+	[Flags]
+	public enum LEVEL {NONE=0,TRACE=1,DEBUG=2,ERROR=4,ALL=7}
+	public static LEVEL Level = LEVEL.ALL;
+	
+	private string _tag;
+	
+	public Logger(string tag)
     {
-        get
-        {
-            if (_instance == null) _instance = new Logger();
-            return _instance;
-        }
-    }
-
-    private Logger()
-    {
+		_tag = tag;
 		_queue = new List<byte[]>();
     }
-
-    #endregion
 	
-	private Socket sock = null;
-    private string host = "127.0.0.1";  // Uri
-    private int port = 4444;
-	
-	private List<byte[]> _queue;
-	
-	
-	public static void Trace(string msg){
-		I.AddMsg(msg,"trace");
+	public void Trace(string msg){
+		if((Level & LEVEL.TRACE) == LEVEL.TRACE) 
+		AddMsg(msg,"trace");
 	}
 		
-	public static void Debug(string msg){
-		I.AddMsg(msg,"debug");
+	public void Debug(string msg){
+		if((Level & LEVEL.DEBUG) == LEVEL.DEBUG) 
+		AddMsg(msg,"debug");
 	}
 	
-	public static void Error(string msg){
-		I.AddMsg(msg,"error");
+	public void Error(string msg){
+		if((Level & LEVEL.ERROR) == LEVEL.ERROR) 
+		AddMsg(msg,"error");
 	}
+	
 	
 	private void AddMsg(String msg,string key){
-		_queue.Add(Encoding.UTF8.GetBytes("!SOS<showMessage key='"+key+"'>"+msg+"</showMessage>\n" + (char)0));
+		_queue.Add(Encoding.UTF8.GetBytes("!SOS<showMessage key='" + key + "'><![CDATA[["+Time.time+"][" + _tag + "] " + msg + "]]></showMessage>\n" + (char)0));
 		SocketSend();
 	}
+
 	
 	private void SocketSend(){
-
+		
 		if(sock == null) Reconnect();
 		
-		try {
-			if (sock.Connected) {
+		lock(sock){
+			try {
+				if (sock.Connected) {
+					
+				if(_queue.Count > 0){
+					byte[] msg = _queue[0];
+					_queue.RemoveAt(0);
+					sock.Send(msg, SocketFlags.None);
+				}
 				
-			if(_queue.Count > 0){
-				byte[] msg = _queue[0];
-				_queue.RemoveAt(0);
-				sock.Send(msg, SocketFlags.None);
 			}
-			
-		}
-		} catch (Exception e)
-		{
-            UnityEngine.Debug.LogError(e.Message);
+			} catch (Exception e)
+			{
+	            UnityEngine.Debug.LogError(e.Message);
+			}
 		}
 	}
 	

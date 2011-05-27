@@ -45,11 +45,11 @@ public class InputManager
 				e.Invoke(GuiEventType.KEYDOWN);
 			}
 
-		    Array lstProvider = System.Enum.GetValues( typeof(KeyCode)); 
-            foreach (KeyCode enProvider in lstProvider)
-            {
-                if (Input.GetKey(enProvider)) AppConsole.AddMessage(enProvider);
-            }      
+		    //Array lstProvider = System.Enum.GetValues( typeof(KeyCode)); 
+            //foreach (KeyCode enProvider in lstProvider)
+            //{
+            //    if (Input.GetKey(enProvider)) AppConsole.AddMessage(enProvider);
+            //}      
 		}
 	}
 	

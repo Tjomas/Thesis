@@ -13,7 +13,7 @@ public class PluginMediator: Mediator, IMediator
 	public PluginMediator ():base(NAME)
 	{
 		ViewComponent = new PluginComponent();
-	    View().PluginSelectedHandler += new PluginComponent.PluginSelected(PluginSelected);
+	    View.PluginSelectedHandler += new PluginComponent.PluginSelected(PluginSelected);
 	}
 	
 	public override void OnRegister()
@@ -23,18 +23,18 @@ public class PluginMediator: Mediator, IMediator
 		
 		List<IPlugin> Plugins = _pluginProxy.GetPluginList();
 		for(int i = 0; i < Plugins.Count; i++){
-			View().AddPlugin(i, Plugins[i]);
+			View.AddPlugin(i, Plugins[i]);
 		}
 
 	}
 	
-	protected PluginComponent View(){
-		return (PluginComponent) ViewComponent;
+	private PluginComponent View{
+		get{return (PluginComponent) ViewComponent;}
 	}
 
     private void PluginSelected()
     {
-        UnityEngine.Debug.LogError("Tafa"+ UnityEngine.Random.value);
+        //UnityEngine.Debug.LogError("Tafa"+ UnityEngine.Random.value);
     }
 }
 

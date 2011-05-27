@@ -9,12 +9,6 @@ using PureMVC.Interfaces;
 
 public class AppFacade : Facade
 {
-	#region Notification name constants
-
-	public const string STARTUP					= "startup";
-
-	#endregion
-
 	#region Accessors
 
 	/// <summary>
@@ -46,7 +40,7 @@ public class AppFacade : Facade
 	/// <param name="app"></param>
 	public void Startup(object app)
 	{
-		SendNotification(STARTUP, app);
+		SendNotification(NoteConsts.APP_STARTUP, app);
 	}
 
 	#endregion
@@ -72,9 +66,7 @@ public class AppFacade : Facade
 	protected override void InitializeController()
 	{
 		base.InitializeController();
-		RegisterCommand(STARTUP, typeof(StartupCommand));
-		//RegisterCommand(DELETE_USER, typeof(DeleteUserCommand));
-		//RegisterCommand(ADD_ROLE_RESULT, typeof(AddRoleResultCommand));
+		RegisterCommand(NoteConsts.APP_STARTUP, typeof(StartupCommand));
 	}
 
 	#endregion

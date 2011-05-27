@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class GuiSimple : GuiDisplayObject
 { 
-    private MethodInfo _methode;
+    protected MethodInfo _methode;
 
     public GuiSimple(string guiType, params object[] args)
         : base(args)

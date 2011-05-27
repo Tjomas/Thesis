@@ -130,8 +130,6 @@ public abstract class GuiDisplayObject
         if (_go2D.active == false) return; //early out
 
         DrawImpl();
-		
-        //if(Input.anyKeyDown) InvokeEvent(GuiEventType.KEY);
 
         if (_childs != null)
         {

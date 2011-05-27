@@ -16,7 +16,7 @@ public class AppConsole
     private static AppConsole _instance = null;
     private GuiDisplayObject _gui;
     private bool showList;
-	
+	private Logger _logger;
 
 
     public static AppConsole I
@@ -34,6 +34,8 @@ public class AppConsole
         GuiManager.AddChild(_gui);
 
         InputManager.I.Subscribe(new GuiKeyEvent.EventHandler(ToggleConsole), GuiEventType.KEYDOWN, Tools.Hash("key", KeyCode.F2));
+		
+		_logger = new Logger("APPCONSOLE");
     }
 
     #endregion
@@ -68,7 +70,7 @@ public class AppConsole
         //Anzeigen
         _gui.Text = _msgCache;
 		//socket-out
-		Logger.Trace(msg.ToString());
+		_logger.Trace(msg.ToString());
     }
 
     protected string GenerateCache()
@@ -87,6 +89,4 @@ public class AppConsole
 
         return cache;
     }
-	
-	
 }
