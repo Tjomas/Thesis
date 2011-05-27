@@ -32,7 +32,7 @@ public class AppConsole
     {
         _gui = new GuiSimple("Label", new Rect(0, -(Screen.height >> 1), Screen.width, Screen.height >> 1), "Null");
         GuiManager.AddChild(_gui);
-
+		
         InputManager.I.Subscribe(new GuiKeyEvent.EventHandler(ToggleConsole), GuiEventType.KEYDOWN, Tools.Hash("key", KeyCode.F2));
 		
 		_logger = new Logger("APPCONSOLE");
@@ -43,8 +43,7 @@ public class AppConsole
     public void ToggleConsole(GuiEvent e)
     {
         AppConsole.AddMessage("Toogle Console");
-
-
+		
         //toggle plugin list
         showList = !showList;
         if (showList == true) iTween.MoveTo(_gui.ToGameObject(), new Vector3(0, Screen.height >> 1, 0), 1);

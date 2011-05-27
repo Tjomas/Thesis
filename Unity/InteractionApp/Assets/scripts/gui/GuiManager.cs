@@ -18,10 +18,10 @@ public class GuiManager : MonoBehaviour
         {
             if (_instance == null)
             {
-                _go = new GameObject("GuiManager", new Type[1] {typeof (GuiManager)});
+                _go = new GameObject("Graph2D", new Type[1] {typeof (GuiManager)});
                 _instance = _go.GetComponent<GuiManager>();
                 //Unter App anzeigen
-                _go.transform.parent = App.GetInstance().gameObject.transform;
+                //_go.transform.parent = GameObject.Find("Graph2D").transform;
             }
             //
             return _instance;
