@@ -13,9 +13,9 @@ public class GuiEvent
     public delegate void EventHandler(GuiEvent e);
 	public event EventHandler Handler;
 	
-    protected SortedList _params; 
+    protected Dictionary<string,object> _params; 
 
-	public GuiEvent(GuiDisplayObject sender,GuiEventType type, SortedList parameter)
+	public GuiEvent(GuiDisplayObject sender,GuiEventType type, Dictionary<string,object> parameter)
     {
         Sender = sender;
 		Type = type;

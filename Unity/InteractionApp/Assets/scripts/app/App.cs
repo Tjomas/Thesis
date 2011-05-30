@@ -15,7 +15,6 @@ public class App: MonoBehaviour{
         //MobileSettings
         
 		_inputManager = InputManager.I;
-
     }
 	
 	public static App GetInstance(){

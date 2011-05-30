@@ -10,7 +10,7 @@ public class Button : GuiDisplayObject
 { 
     private MethodInfo _methode;
 
-    public Button(SortedList args):base(args)
+    public Button(Dictionary<string,object> args):base(args)
     {
 		Name = "Button " + _id; 
         _methode = FindMethode("Button", args);

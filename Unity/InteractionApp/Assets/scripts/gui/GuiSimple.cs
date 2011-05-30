@@ -10,7 +10,7 @@ public class GuiSimple : GuiDisplayObject
 { 
     protected MethodInfo _methode;
 
-    public GuiSimple(string guiType, SortedList args)
+    public GuiSimple(string guiType, Dictionary<string,object> args)
         : base(args)
     {
         Name = guiType + " " + _id;

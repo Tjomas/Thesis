@@ -3,5 +3,6 @@
     CLICK,
     KEY,
 	KEYDOWN,
-	UPDATE
+	UPDATE,
+	VALUE_CHANGED
 } 

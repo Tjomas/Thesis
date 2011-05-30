@@ -6,7 +6,7 @@ using System.Reflection;
 
 public class GuiKeyEvent : GuiEvent
 {
-    public GuiKeyEvent(GuiDisplayObject sender, GuiEventType type, SortedList paremater) : base(sender, type, paremater)
+    public GuiKeyEvent(GuiDisplayObject sender, GuiEventType type, Dictionary<string,object> paremater) : base(sender, type, paremater)
     {
     }
 	

@@ -97,6 +97,7 @@
      <Compile Include="Assets\scripts\gui\GuiGroup.cs" />
      <Compile Include="Assets\scripts\gui\GuiManager.cs" />
      <Compile Include="Assets\scripts\gui\GuiSimple.cs" />
+     <Compile Include="Assets\scripts\gui\GuiSlider.cs" />
      <Compile Include="Assets\scripts\gui\GuiWidget.cs" />
      <Compile Include="Assets\scripts\input\InputManager.cs" />
      <Compile Include="Assets\scripts\net\Logger.cs" />

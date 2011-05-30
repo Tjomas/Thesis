@@ -10,7 +10,7 @@ public class LoadObjectCommand: SimpleCommand, ICommand
 		if(notification.Type != NoteTypeConsts.REQUEST) return;
 			
 		//correct vo included	
-		ObjectVO vo = (ObjectVO)notification.Body();
+		ObjectVO vo = (ObjectVO)notification.Body;
 		if(vo == null) return;
 		
 		//finally call the proxy

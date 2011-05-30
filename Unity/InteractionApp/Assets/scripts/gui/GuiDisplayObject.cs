@@ -87,14 +87,15 @@ public abstract class GuiDisplayObject
     }
 	
 	private bool _dirty = false;
+	protected void MarkDirty(){_dirty = true;}
 	
 	private static Logger _logger = new Logger("GuiDisplayObject");
 	
-    private SortedList _args;
-	private object[] _argsObject;
-	private System.Type[] _argsType;
+    protected Dictionary<string,object> _args;
+	protected object[] _argsObject;
+	protected System.Type[] _argsType;
 
-    public GuiDisplayObject(SortedList args)
+    public GuiDisplayObject(Dictionary<string,object> args)
     {
 		
 		//Pflichtfelde
@@ -162,11 +163,11 @@ public abstract class GuiDisplayObject
         }
     }
 	
-	protected object[] HashToObjectArray(SortedList args){
+	protected object[] HashToObjectArray(Dictionary<string,object> args){
 		object[] tmp = new object[args.Count]; 
 		int i = 0;
 		
-		foreach(DictionaryEntry arg in args)
+		foreach(KeyValuePair<string,object> arg in args)
             {
                tmp[i++] = arg.Value;
             }
@@ -174,11 +175,11 @@ public abstract class GuiDisplayObject
 		return tmp;
 	}
 	
-	protected Type[] HashToTypeArray(SortedList args){
+	protected Type[] HashToTypeArray(Dictionary<string,object> args){
 		Type[] tmp = new Type[args.Count]; 
 		int i = 0;
 		
-		foreach(DictionaryEntry a in args)
+		foreach(KeyValuePair<string,object> a in args)
         {
            tmp[i++] = a.Value.GetType();
         }
@@ -186,10 +187,11 @@ public abstract class GuiDisplayObject
 		return tmp;
 	}
 	
-    protected MethodInfo FindMethode(string name, SortedList args)
+    protected MethodInfo FindMethode(string name, Dictionary<string,object> args)
     {
         Type[] types = HashToTypeArray(args);
 		MethodInfo methode = typeof (GUI).GetMethod(name, types);
+		if(methode == null)throw new Exception("no methode found for:" + name + " params:"+Tools.ListToString(args) + " types:" + Tools.ArrayToString(types));
         return methode;
     }
 
@@ -201,7 +203,7 @@ public abstract class GuiDisplayObject
         _childs.Add(displayObject);
     }
 
-	public void Subscribe(GuiEvent.EventHandler callback,GuiEventType type, SortedList parameter){
+	public void Subscribe(GuiEvent.EventHandler callback,GuiEventType type, Dictionary<string,object> parameter){
 		GuiEvent e = new GuiEvent(this,type, parameter);
 		e.Handler += callback;
 		//

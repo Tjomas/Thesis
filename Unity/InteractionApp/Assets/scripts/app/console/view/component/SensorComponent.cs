@@ -17,6 +17,8 @@ public class SensorComponent
     private Vector3 _preVector;
     private int _x = 0;
     private GuiSimple _gui;
+	
+	private GuiSlider _sliderX;
 
     public SensorComponent()
     {
@@ -30,8 +32,11 @@ public class SensorComponent
         _tex = new Texture2D(_graphWidth, _height, TextureFormat.ARGB32, false);
 		
 		
-        _gui = new GuiSimple("DrawTexture", Tools.List("texture",_tex, "rect",new Rect(Screen.width - _graphWidth, 0, _graphWidth, _height)));
+        _gui = new GuiSimple("DrawTexture", Tools.List("rect",new Rect(Screen.width - _graphWidth, 0, _graphWidth, _height),"texture",_tex));
   		_gui.Name = "SensorGraph";
+		
+		_sliderX = new GuiSlider(Tools.List("rect",new Rect(0,0,_graphWidth,20),"value",2f,"leftvalue",0f,"rightvalue",10f));
+		_gui.AddChild(_sliderX);
 		
 		GuiManager.I.Subscribe(new GuiEvent.EventHandler(Update), GuiEventType.UPDATE);
     }

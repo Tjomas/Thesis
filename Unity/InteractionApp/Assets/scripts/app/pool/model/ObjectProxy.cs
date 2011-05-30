@@ -23,6 +23,9 @@ public class ObjectProxy: Proxy, IProxy
 		get {
 			return (List<ObjectVO>)base.Data;
 		}
+		set{
+			base.Data = value;
+		}
 	}
 	
 }

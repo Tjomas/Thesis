@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 
 public class GuiGroup : GuiDisplayObject
 {
-    public GuiGroup(SortedList args)
+    public GuiGroup(Dictionary<string,object> args)
         : base(args)
     {
         Name = "Group";
