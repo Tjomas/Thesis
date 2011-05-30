@@ -16,19 +16,42 @@ public class StartupCommand : SimpleCommand, ICommand
 	/// <param name="note"></param>
 	public override void Execute(INotification note)
 	{
-		//Commands anlegen
-		Facade.RegisterCommand(NoteConsts.CONSOLE_ADDMESSAGE,typeof(AddConsoleCommand));
-	
-		//Proxies anlegen
-		Facade.RegisterProxy(new ConsoleProxy());
-		Facade.RegisterProxy(new PluginProxy());
+		//Entfernen des Commands nach einmaligen Ausführen
+		Facade.RemoveCommand(NoteConsts.APP_STARTUP);	
 		
-		//Mediatoren anlegen
-		Facade.RegisterMediator(new PluginMediator());
-		Facade.RegisterMediator(new ConsoleMediator());
+		//Console
+		initConsole();	
+		//Loader
+		initLoader();
+		//Plugins
+		initPlugin();
 		
 		//StartupMessage verschicken
 		SendNotification(NoteConsts.CONSOLE_ADDMESSAGE,new MessageVO("StartupCommand done!"));
+	}
+	
+	private void initConsole(){
+		//Commands anlegen
+		Facade.RegisterCommand(NoteConsts.CONSOLE_ADDMESSAGE,typeof(AddConsoleCommand));
+		//Proxies anlegen
+		Facade.RegisterProxy(new ConsoleProxy());
+		//Mediatoren anlegen
+		Facade.RegisterMediator(new ConsoleMediator());
+	}
+	
+	private void initLoader(){
+		//Commands anlegen
+		Facade.RegisterCommand(NoteConsts.LOADER_LOAD,typeof(LoadObjectCommand));
+		//Proxies anlegen
+		Facade.RegisterProxy(new ObjectProxy());
+		//Mediatoren anlegen
+	}
+	
+	private void initPlugin(){
+		//Proxies anlegen
+		Facade.RegisterProxy(new PluginProxy());
+		//Mediatoren anlegen
+		Facade.RegisterMediator(new PluginMediator());
 	}
 }
 

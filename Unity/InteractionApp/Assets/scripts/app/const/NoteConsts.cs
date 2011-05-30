@@ -5,7 +5,13 @@ public class NoteConsts
 	
 	//APP
 	
+	//Startup
 	public const string APP_STARTUP = "app_startup";
+
+	//LOADER
+	
+	//Neues Objekt laden
+	public const string LOADER_LOAD = "loader_load";
 	
 	//CONSOLE
 	
