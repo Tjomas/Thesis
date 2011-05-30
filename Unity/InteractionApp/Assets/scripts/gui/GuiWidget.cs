@@ -6,8 +6,8 @@ using UnityEngine;
 public class GuiWidget : MonoBehaviour
 {
     public Vector2 LocalPosition = Vector2.zero;
-    public Vector2 Size = Vector2.zero;
-    private Vector2 _gameObjectPosition;
+    public Vector2 Dimension = Vector2.zero;
+	private Vector2 _gameObjectPosition;
 
     public Vector2 Position
     {

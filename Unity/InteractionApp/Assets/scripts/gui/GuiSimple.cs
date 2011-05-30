@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Reflection;
 using UnityEngine;
 using Object = System.Object;
@@ -9,7 +10,7 @@ public class GuiSimple : GuiDisplayObject
 { 
     protected MethodInfo _methode;
 
-    public GuiSimple(string guiType, params object[] args)
+    public GuiSimple(string guiType, SortedList args)
         : base(args)
     {
         Name = guiType + " " + _id;

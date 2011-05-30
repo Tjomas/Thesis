@@ -57,7 +57,7 @@ public class InputManager
 		Subscribe(callback,type,null);
 	}
 	
-	public void Subscribe(GuiEvent.EventHandler callback,GuiEventType type, Hashtable parameter){
+	public void Subscribe(GuiEvent.EventHandler callback,GuiEventType type, SortedList parameter){
 		GuiKeyEvent e = new GuiKeyEvent(null ,type, parameter);
 		e.Handler += callback;
 		//

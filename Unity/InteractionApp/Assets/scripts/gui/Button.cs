@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Reflection;
 using UnityEngine;
 using Object = System.Object;
@@ -9,9 +10,9 @@ public class Button : GuiDisplayObject
 { 
     private MethodInfo _methode;
 
-    public Button(params object[] args):base(args)
+    public Button(SortedList args):base(args)
     {
-        Name = "Button " + _id; 
+		Name = "Button " + _id; 
         _methode = FindMethode("Button", args);
     }
 

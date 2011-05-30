@@ -46,7 +46,8 @@ public abstract class GuiDisplayObject
             _childs[index] = value;
         }
     }
-
+	
+	private Rect _rect;
     public Vector2 Position
     {
         get { return _widget.Position; }
@@ -54,10 +55,10 @@ public abstract class GuiDisplayObject
     }
 
 
-    public Vector2 Size
+    public Vector2 Dimension
     {
-        get { return _widget.Size; }
-        set { _widget.Size = value; }
+        get { return _widget.Dimension; }
+        set { _widget.Dimension = value; }
     }
 
     public GameObject Parent
@@ -72,64 +73,84 @@ public abstract class GuiDisplayObject
         get { return _go2D.name; }
         set { _go2D.name = value; }
     }
-
+	
+	private string _text;
     public string Text
     {
-        get { return _args[_txtIndex].ToString(); }
+        get { return _text; }
         set
         {
-            for (int i = 0; i < _args.Length; i++)
-            {
-                object arg = _args[i];
-                if(arg.GetType().Equals(typeof(string)))
-                {
-                    _args[i] = value;
-                    _txtIndex = i;
-                    return;
-                }
-            }
+            _text = value;
+			if(_args.ContainsKey("text")) _args["text"] = value;
+			else _args.Add("text",value);
         }
     }
+	
+	private bool _dirty = false;
+	
+	private static Logger _logger = new Logger("GuiDisplayObject");
+	
+    private SortedList _args;
+	private object[] _argsObject;
+	private System.Type[] _argsType;
 
-    //this args thing need a complete rework
-    private object[] _args;
-    private int _rectIndex = 0;
-    private int _txtIndex = 0;
-
-    public GuiDisplayObject(object[] args)
+    public GuiDisplayObject(SortedList args)
     {
+		
+		//Pflichtfelde
+		if(args.ContainsKey("rect") == false){
+			throw new Exception("No Rect defined");
+		}
+		
+		//Text
+		_text = "";
+		if(args.ContainsKey("text")){
+			_text = (string) args["text"];	
+		}
+		
         _args = args;
         _id = _idCounter++;
         _go2D = new GameObject("2D GameObject - " + _id);
-        //
-        for (int i = 0; i < _args.Length; i++)
-        {
-            object arg = _args[i];
-            if (arg.GetType().Equals(typeof (Rect)))
-            {
-                Rect r = (Rect) arg;
-                _widget = _go2D.AddComponent<GuiWidget>();
-                _widget.LocalPosition = new Vector2(r.x, r.y);
-                _widget.Size = new Vector2(r.width, r.height);
 
-                _rectIndex = i;
-            }
-        }
-        //
+		
+		//Position
+        _rect = (Rect) args["rect"];
+        _widget = _go2D.AddComponent<GuiWidget>();
+        _widget.LocalPosition = new Vector2(_rect.x, _rect.y);
+        _widget.Dimension = new Vector2(_rect.width, _rect.height);
+
+        //make active
         Visible = true;
     }
 
     protected object[] GetArgs()
     {
-        Rect r = new Rect(Position.x, Position.y, Size.x, Size.y);
-        _args[_rectIndex] = r;
-        return _args;
+		
+		
+		if(_argsObject == null || _dirty){
+			_rect.x = Position.x;
+			_rect.y = Position.y;
+			_rect.width = Dimension.x;
+			_rect.height = Dimension.y;
+			_args["rect"] = _rect;
+			_argsObject = HashToObjectArray(_args);
+			_dirty = false;
+			//
+			_logger.Debug("Dirty");
+        }
+			
+		return _argsObject;
     }
-
+	
     public void Draw()
     {
         if (_go2D.active == false) return; //early out
-
+		
+		//dirtycheck
+		_dirty = _dirty || !Position.Equals(new Vector2(_rect.x,_rect.y));
+		_dirty = _dirty || !Dimension.Equals(new Vector2(_rect.width,_rect.height));
+		
+		//draw
         DrawImpl();
 
         if (_childs != null)
@@ -140,17 +161,36 @@ public abstract class GuiDisplayObject
             }
         }
     }
-
-    protected MethodInfo FindMethode(string name, object[] args)
-    {
-        Type[] types = new Type[args.Length];
-
-        for (int i = 0; i < args.Length; i++)
+	
+	protected object[] HashToObjectArray(SortedList args){
+		object[] tmp = new object[args.Count]; 
+		int i = 0;
+		
+		foreach(DictionaryEntry arg in args)
+            {
+               tmp[i++] = arg.Value;
+            }
+		
+		return tmp;
+	}
+	
+	protected Type[] HashToTypeArray(SortedList args){
+		Type[] tmp = new Type[args.Count]; 
+		int i = 0;
+		
+		foreach(DictionaryEntry a in args)
         {
-            types[i] = args[i].GetType();
+           tmp[i++] = a.Value.GetType();
         }
-
-        return typeof (GUI).GetMethod(name, types);
+		
+		return tmp;
+	}
+	
+    protected MethodInfo FindMethode(string name, SortedList args)
+    {
+        Type[] types = HashToTypeArray(args);
+		MethodInfo methode = typeof (GUI).GetMethod(name, types);
+        return methode;
     }
 
     public void AddChild(GuiDisplayObject displayObject)
@@ -161,7 +201,7 @@ public abstract class GuiDisplayObject
         _childs.Add(displayObject);
     }
 
-	public void Subscribe(GuiEvent.EventHandler callback,GuiEventType type, Hashtable parameter){
+	public void Subscribe(GuiEvent.EventHandler callback,GuiEventType type, SortedList parameter){
 		GuiEvent e = new GuiEvent(this,type, parameter);
 		e.Handler += callback;
 		//

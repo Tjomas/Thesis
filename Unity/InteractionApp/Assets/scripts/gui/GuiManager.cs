@@ -57,7 +57,7 @@ public class GuiManager : MonoBehaviour
 		Subscribe(callback,type,null);
 	}
 	
-	public void Subscribe(GuiEvent.EventHandler callback,GuiEventType type, Hashtable parameter){
+	public void Subscribe(GuiEvent.EventHandler callback,GuiEventType type, SortedList parameter){
 		GuiEvent e = new GuiEvent(null ,type, parameter);
 		e.Handler += callback;
 		//

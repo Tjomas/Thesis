@@ -28,8 +28,9 @@ public class SensorComponent
 
         _cache = new Vector3[_graphWidth];
         _tex = new Texture2D(_graphWidth, _height, TextureFormat.ARGB32, false);
-
-        _gui = new GuiSimple("DrawTexture", new Rect(Screen.width - _graphWidth, 0, _graphWidth, _height), _tex);
+		
+		
+        _gui = new GuiSimple("DrawTexture", Tools.List("texture",_tex, "rect",new Rect(Screen.width - _graphWidth, 0, _graphWidth, _height)));
   		_gui.Name = "SensorGraph";
 		
 		GuiManager.I.Subscribe(new GuiEvent.EventHandler(Update), GuiEventType.UPDATE);

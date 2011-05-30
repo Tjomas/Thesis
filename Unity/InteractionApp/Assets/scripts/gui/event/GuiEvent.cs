@@ -13,9 +13,9 @@ public class GuiEvent
     public delegate void EventHandler(GuiEvent e);
 	public event EventHandler Handler;
 	
-    protected Hashtable _params; 
+    protected SortedList _params; 
 
-	public GuiEvent(GuiDisplayObject sender,GuiEventType type, Hashtable parameter)
+	public GuiEvent(GuiDisplayObject sender,GuiEventType type, SortedList parameter)
     {
         Sender = sender;
 		Type = type;
