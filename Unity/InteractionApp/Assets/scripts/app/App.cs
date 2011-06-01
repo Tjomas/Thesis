@@ -26,7 +26,8 @@ public class App: MonoBehaviour{
 		AppFacade facade = (AppFacade) AppFacade.Instance;
 		facade.Startup(this);
        
-		iPhoneSettings.screenCanDarken = false;
+		
+		//if(AppConsts.MOBILE) iPhoneSettings.screenCanDarken = false;
     }
 	
 	

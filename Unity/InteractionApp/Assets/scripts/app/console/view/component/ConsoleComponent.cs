@@ -10,7 +10,7 @@ public class ConsoleComponent: GuiSimple
 		this.Name="Console";
 		
 		//Add sensorgui
-		AddChild((new SensorComponent()).GetGui());
+		AddChild(new SensorComponent());
 		
 		//link console into the 2d scenegraph
 		GuiManager.AddChild(this);

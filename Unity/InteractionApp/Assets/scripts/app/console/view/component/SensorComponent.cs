@@ -4,7 +4,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 
-public class SensorComponent
+public class SensorComponent: GuiSimple
 {
     private Texture2D _tex;
     private int _graphWidth;
@@ -15,12 +15,11 @@ public class SensorComponent
     
     private Vector3[] _cache;
     private Vector3 _preVector;
+	private Vector3 _debugVec; //slidervalues in editormode
     private int _x = 0;
-    private GuiSimple _gui;
-	
-	private GuiSlider _sliderX;
+    //private GuiSimple _gui;
 
-    public SensorComponent()
+    public SensorComponent():base("DrawTexture", Tools.List("rect",new Rect(0,0,0,0),"texture",new Texture2D(1,1)))
     {
         _graphWidth = 500;
         _graphHeight = 100;
@@ -31,26 +30,56 @@ public class SensorComponent
         _cache = new Vector3[_graphWidth];
         _tex = new Texture2D(_graphWidth, _height, TextureFormat.ARGB32, false);
 		
+		//default debug vec
+		_debugVec = new Vector3(0f,0.1f,0.2f);
 		
-        _gui = new GuiSimple("DrawTexture", Tools.List("rect",new Rect(Screen.width - _graphWidth, 0, _graphWidth, _height),"texture",_tex));
-  		_gui.Name = "SensorGraph";
+		Position = new Vector2(Screen.width - _graphWidth, 0);
+		Dimension = new Vector2(_graphWidth, _height);
 		
-		_sliderX = new GuiSlider(Tools.List("rect",new Rect(0,0,_graphWidth,20),"value",2f,"leftvalue",0f,"rightvalue",10f));
-		_gui.AddChild(_sliderX);
+		_args["texture"] = _tex;
+		Name = "SensorGraph";
+		MarkDirty();
+		
+        if(!AppConsts.MOBILE){
+			GuiSlider slider;
+			
+			//X
+			slider = new GuiSlider(Tools.List("rect",new Rect(0,_height,_graphWidth,20),"value",0f,"leftvalue",-1.0f,"rightvalue",1f));
+			slider.Subscribe (new GuiEvent.EventHandler (EditorVecUpdate), GuiEventType.VALUE_CHANGED, Tools.List("axis",0));
+			AddChild(slider);
+			
+			//Y
+			slider = new GuiSlider(Tools.List("rect",new Rect(0,_height + 20,_graphWidth,20),"value",0f,"leftvalue",-1.0f,"rightvalue",1f));
+			slider.Subscribe (new GuiEvent.EventHandler (EditorVecUpdate), GuiEventType.VALUE_CHANGED, Tools.List("axis",1));
+			AddChild(slider);
+			
+			//Z
+			slider = new GuiSlider(Tools.List("rect",new Rect(0,_height + 40,_graphWidth,20),"value",0f,"leftvalue",-1.0f,"rightvalue",1f));
+			slider.Subscribe (new GuiEvent.EventHandler (EditorVecUpdate), GuiEventType.VALUE_CHANGED, Tools.List("axis",2));
+			AddChild(slider);
+		}
 		
 		GuiManager.I.Subscribe(new GuiEvent.EventHandler(Update), GuiEventType.UPDATE);
     }
 
-    public GuiDisplayObject GetGui()
+    /*public GuiDisplayObject GetGui()
     {
         return _gui;
-    }
+    }*/
+	
+	public void EditorVecUpdate(GuiEvent e){
+		switch((int)e["axis"]){
+			case 0: _debugVec = new Vector3(((GuiSlider)e.Sender).VALUE,_debugVec.y,_debugVec.z);break;
+			case 1: _debugVec = new Vector3(_debugVec.x,((GuiSlider)e.Sender).VALUE,_debugVec.z);break;
+			case 2: _debugVec = new Vector3(_debugVec.x,_debugVec.y,((GuiSlider)e.Sender).VALUE);break;	
+		}
+	}
 
     public void Update(GuiEvent e)
     {
         //Faking without sensor
-        if(Application.platform != RuntimePlatform.Android){
-            _cache[_x] = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)); ;
+        if(!AppConsts.MOBILE){
+			_cache[_x] = _debugVec;
         }
         else
         {

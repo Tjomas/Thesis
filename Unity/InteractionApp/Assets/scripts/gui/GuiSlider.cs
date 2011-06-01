@@ -7,31 +7,29 @@ public class GuiSlider: GuiDisplayObject
 {
  	private MethodInfo _methode;
 	private float _oldValue;
-	private static Logger _logger = new Logger("GuiSlider");
+	public float VALUE{get;set;}
 	
     public GuiSlider(Dictionary<string,object> args):base(args)
     {
 		Name = "HorizontalSlider " + _id; 
-		_logger.Error(Tools.ListToString(args));
         _methode = FindMethode("HorizontalSlider", args);
     }
 
     protected override void DrawImpl()
     {
-		_methode.Invoke(null, GetArgs());
+
+        VALUE = (float) _methode.Invoke(null, GetArgs());
 		
-        
-        float newValue = (float) _methode.Invoke(null, GetArgs());
-		
-		//Warum zum Teufel geht das nicht		
-		if(newValue != _oldValue)
+		if(VALUE != _oldValue)
         {
-			_args["value"] = newValue;
+			_logger.Debug("new slider value:" + VALUE);
+			_args["value"] = VALUE;
 			MarkDirty();
-			
             InvokeEvent(GuiEventType.VALUE_CHANGED);
         }
-		_oldValue = newValue;
+		
+		//save the old value
+		_oldValue = VALUE;
 		
     }
 }

@@ -77,6 +77,7 @@
      <Compile Include="Assets\scripts\app\console\view\component\ConsoleComponent.cs" />
      <Compile Include="Assets\scripts\app\console\view\component\SensorComponent.cs" />
      <Compile Include="Assets\scripts\app\console\view\ConsoleMediator.cs" />
+     <Compile Include="Assets\scripts\app\const\AppConsts.cs" />
      <Compile Include="Assets\scripts\app\const\NoteConsts.cs" />
      <Compile Include="Assets\scripts\app\const\NoteTypeConsts.cs" />
      <Compile Include="Assets\scripts\app\controller\StartupCommand.cs" />

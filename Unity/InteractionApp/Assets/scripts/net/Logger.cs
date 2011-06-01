@@ -26,6 +26,11 @@ public class Logger
 	
 	private string _tag;
 	
+	public string TAG{
+		get{return _tag;}
+		set{_tag = value;}
+	}
+	
 	public Logger(string tag)
     {
 		_tag = tag;

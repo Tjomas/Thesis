@@ -19,6 +19,6 @@ public class GuiSimple : GuiDisplayObject
 
     protected override void DrawImpl()
     {
-        _methode.Invoke(null, GetArgs());
+		if(_methode != null) _methode.Invoke(null, GetArgs());
     }
 }

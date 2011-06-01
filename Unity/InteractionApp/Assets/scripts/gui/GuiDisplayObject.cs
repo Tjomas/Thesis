@@ -71,7 +71,7 @@ public abstract class GuiDisplayObject
     public string Name
     {
         get { return _go2D.name; }
-        set { _go2D.name = value; }
+        set { _go2D.name = value; _logger.TAG = value; }
     }
 	
 	private string _text;
@@ -89,7 +89,7 @@ public abstract class GuiDisplayObject
 	private bool _dirty = false;
 	protected void MarkDirty(){_dirty = true;}
 	
-	private static Logger _logger = new Logger("GuiDisplayObject");
+	protected Logger _logger;
 	
     protected Dictionary<string,object> _args;
 	protected object[] _argsObject;
@@ -119,15 +119,16 @@ public abstract class GuiDisplayObject
         _widget = _go2D.AddComponent<GuiWidget>();
         _widget.LocalPosition = new Vector2(_rect.x, _rect.y);
         _widget.Dimension = new Vector2(_rect.width, _rect.height);
-
+		
+		//Logger
+		_logger = new Logger(Name);
+		
         //make active
         Visible = true;
     }
 
     protected object[] GetArgs()
-    {
-		
-		
+    {	
 		if(_argsObject == null || _dirty){
 			_rect.x = Position.x;
 			_rect.y = Position.y;
@@ -191,7 +192,7 @@ public abstract class GuiDisplayObject
     {
         Type[] types = HashToTypeArray(args);
 		MethodInfo methode = typeof (GUI).GetMethod(name, types);
-		if(methode == null)throw new Exception("no methode found for:" + name + " params:"+Tools.ListToString(args) + " types:" + Tools.ArrayToString(types));
+		if(methode == null) throw new Exception("no methode found for:" + name + " params:"+Tools.ListToString(args) + " types:" + Tools.ArrayToString(types));
         return methode;
     }
 
