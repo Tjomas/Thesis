@@ -43,3 +43,4 @@ Unity/InteractionApp/Library
 Unity/InteractionApp/Temp
 *.pdb
 *.pidb
+.DS_Store
