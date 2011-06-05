@@ -1,4 +1,4 @@
-Microsoft Visual Studio Solution File, Format Version 10.00
+Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
 Project("{ADF714A0-8BDD-36E7-0A8A-F1FBE5D94E4D}") = "InteractionApp", "InteractionApp.csproj", "{61788A08-9356-66E4-E237-08A2CDC1981A}"

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
 	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-	<ProductVersion>9.0.21022</ProductVersion>
+	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
 	<ProjectGuid>{61788A08-9356-66E4-E237-08A2CDC1981A}</ProjectGuid>
 	<OutputType>Library</OutputType>
@@ -18,7 +18,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_3_3_0;UNITY_3_3;UNITY_EDITOR;ENABLE_PROFILER;UNITY_STANDALONE_OSX;ENABLE_GENERICS;ENABLE_DUCK_TYPING;ENABLE_TERRAIN;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CLOTH;ENABLE_WWW</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_3_2_0;UNITY_3_2;UNITY_EDITOR;ENABLE_PROFILER;UNITY_ANDROID;ENABLE_GENERICS;ENABLE_NETWORK;ENABLE_WWW</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -37,40 +37,19 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity3/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity3/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
 	<Reference Include="Boo.Lang">
-	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/Boo.Lang.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity3/Editor/Data/Mono/lib/mono/unity/Boo.Lang.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityScript">
-	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/UnityScript.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity3/Editor/Data/Mono/lib/mono/unity/UnityScript.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\scripts\PureMVC\Core\Controller.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Core\Model.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Core\View.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Interfaces\ICommand.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Interfaces\IController.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Interfaces\IFacade.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Interfaces\IMediator.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Interfaces\IModel.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Interfaces\INotification.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Interfaces\INotifier.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Interfaces\IObserver.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Interfaces\IProxy.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Interfaces\IView.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Patterns\Command\MacroCommand.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Patterns\Command\SimpleCommand.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Patterns\Facade\Facade.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Patterns\Mediator\Mediator.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Patterns\Observer\Notification.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Patterns\Observer\Notifier.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Patterns\Observer\Observer.cs" />
-     <Compile Include="Assets\scripts\PureMVC\Patterns\Proxy\Proxy.cs" />
      <Compile Include="Assets\scripts\app\console\controller\AddConsoleCommand.cs" />
      <Compile Include="Assets\scripts\app\console\model\vo\MessageVO.cs" />
      <Compile Include="Assets\scripts\app\console\model\ConsoleProxy.cs" />
@@ -98,12 +77,35 @@
      <Compile Include="Assets\scripts\gui\GuiManager.cs" />
      <Compile Include="Assets\scripts\gui\GuiSimple.cs" />
      <Compile Include="Assets\scripts\gui\GuiSlider.cs" />
+     <Compile Include="Assets\scripts\gui\GuiVideoTexture.cs" />
      <Compile Include="Assets\scripts\gui\GuiWidget.cs" />
      <Compile Include="Assets\scripts\input\InputManager.cs" />
+     <Compile Include="Assets\scripts\intro\VideoIntroDisplay.cs" />
      <Compile Include="Assets\scripts\net\Logger.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Core\Controller.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Core\Model.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Core\View.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\ICommand.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IController.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IFacade.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IMediator.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IModel.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\INotification.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\INotifier.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IObserver.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IProxy.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IView.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Command\MacroCommand.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Command\SimpleCommand.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Facade\Facade.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Mediator\Mediator.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Observer\Notification.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Observer\Notifier.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Observer\Observer.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Proxy\Proxy.cs" />
      <Compile Include="Assets\scripts\tween\iTween.cs" />
      <Compile Include="Assets\scripts\utils\Tools.cs" />
- <Reference Include="Assets\dlls\IPlugin">
+ <Reference Include="IPlugin">
  <HintPath>Assets\dlls\IPlugin.dll</HintPath>
  </Reference>
   </ItemGroup>

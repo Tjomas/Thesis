@@ -66,6 +66,8 @@ public class GuiManager : MonoBehaviour
 	}
 	
 	public void Update(){
+        if(_events == null) return;
+
 		foreach(GuiEvent e in _events){
 			e.Invoke(GuiEventType.UPDATE);
 		}
