@@ -1,30 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/app/pool/model/ObjectProxy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/app/App.cs">
     <Files>
-      <File FileName="Assets/scripts/app/App.cs" Line="17" Column="34" />
-      <File FileName="Assets/scripts/app/AppFacade.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/app/controller/StartupCommand.cs" Line="30" Column="31" />
-      <File FileName="Assets/scripts/app/pool/model/vo/ObjectVO.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/app/pool/model/ObjectProxy.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/app/pool/controller/LoadObjectCommand.cs" Line="13" Column="46" />
-      <File FileName="Assets/scripts/gui/Button.cs" Line="13" Column="44" />
-      <File FileName="Assets/scripts/gui/event/GuiEventType.cs" Line="7" Column="3" />
-      <File FileName="Assets/scripts/app/console/view/component/SensorComponent.cs" Line="38" Column="1" />
-      <File FileName="Assets/scripts/app/console/view/component/ConsoleComponent.cs" Line="16" Column="29" />
-      <File FileName="Assets/scripts/gui/GuiDisplayObject.cs" Line="131" Column="25" />
-      <File FileName="Assets/scripts/utils/Tools.cs" Line="36" Column="1" />
-      <File FileName="Assets/scripts/gui/GuiSimple.cs" Line="22" Column="1" />
-      <File FileName="Assets/scripts/gui/GuiManager.cs" Line="60" Column="96" />
-      <File FileName="Assets/scripts/input/InputManager.cs" Line="60" Column="96" />
-      <File FileName="Assets/scripts/gui/GuiGroup.cs" Line="2" Column="26" />
-      <File FileName="Assets/scripts/gui/event/GuiEvent.cs" Line="18" Column="82" />
-      <File FileName="Assets/scripts/gui/event/GuiKeyEvent.cs" Line="7" Column="33" />
-      <File FileName="Assets/scripts/app/console/view/ConsoleMediator.cs" Line="18" Column="27" />
-      <File FileName="Assets/scripts/app/plugin/view/PluginMediator.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/app/plugin/view/component/PluginComponent.cs" Line="34" Column="63" />
-      <File FileName="Assets/scripts/net/Logger.cs" Line="52" Column="85" />
-      <File FileName="Assets/scripts/app/plugin/model/PluginProxy.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/gui/GuiSlider.cs" Line="20" Column="1" />
+      <File FileName="Assets/scripts/gui/GuiDisplayObject.cs" Line="98" Column="40" />
+      <File FileName="Assets/scripts/net/Logger.cs" Line="31" Column="21" />
+      <File FileName="Assets/scripts/app/console/view/component/ConsoleComponent.cs" Line="19" Column="11" />
+      <File FileName="Assets/scripts/app/console/view/component/SensorComponent.cs" Line="7" Column="36" />
+      <File FileName="Assets/scripts/app/plugin/view/component/PluginComponent.cs" Line="37" Column="3" />
+      <File FileName="Assets/scripts/gui/event/GuiEvent.cs" Line="8" Column="1" />
+      <File FileName="Assets/scripts/app/const/AppConsts.cs" Line="9" Column="9" />
+      <File FileName="Assets/scripts/gui/GuiSimple.cs" Line="17" Column="47" />
+      <File FileName="Assets/scripts/app/console/view/ConsoleMediator.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/input/InputManager.cs" Line="26" Column="8" />
+      <File FileName="Assets/scripts/app/App.cs" Line="30" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
