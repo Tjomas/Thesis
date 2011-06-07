@@ -4,19 +4,25 @@ using System.Collections;
 using System.Text;
 using UnityEngine;
 
-public class InputManager
+public class InputManager:MonoBehaviour
 {
 	private List<GuiKeyEvent> _events = null;
 	
     #region Singelton
 
     private static InputManager _instance = null;
+	
+	private static GameObject _go = null;
 
     public static InputManager I
     {
         get
         {
-            if (_instance == null) _instance = new InputManager();
+            if (_instance == null){ 
+				_go = new GameObject("InputManager", new Type[1] {typeof (InputManager)});
+                _instance = _go.GetComponent<InputManager>();
+                _go.transform.parent = GameObject.Find(AppConsts.ROOTNODE).transform;
+			}
             return _instance;
         }
     }

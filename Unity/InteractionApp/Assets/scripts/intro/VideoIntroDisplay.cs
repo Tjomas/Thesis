@@ -1,4 +1,4 @@
-//#define MOBILE_PLATFORM
+#define MOBILE_PLATFORM
 
 using UnityEngine;
 using System.Collections;

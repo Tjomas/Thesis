@@ -20,6 +20,10 @@ public class NoteConsts
 	
 	//Eine neue Nachricht wird dem Proxy hinzugefügt. Erfolgt über einen entsprechenden Command
 	public const string CONSOLE_ADDMESSAGE = "console_addmessage";
+	
+	//PLUGIN
+	//Einem Plugin ein Interaktionsobject hinzufügen
+	public const string PLUGIN_CONNECT = "plugin_connect";
 }
 
 

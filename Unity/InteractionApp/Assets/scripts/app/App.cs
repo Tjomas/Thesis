@@ -1,36 +1,37 @@
 using UnityEngine;
 using PureMVC.Patterns;
-using System.Collections;
+using System.Collections.Generic;
+using De.Wellenblau.Inferfaces;
 
 public class App: MonoBehaviour{
 	
-	private InputManager _inputManager;
+	private static App _instance;
+	private AppFacade facade;
 	
-	public static App _instance;
-
     public App()
     {
         _instance = this;
-
-        //MobileSettings
-        
-		_inputManager = InputManager.I;
     }
 	
-	public static App GetInstance(){
-		return _instance;	
+	public static App I{
+		get{return _instance;}	
 	}
 
     public void Start ()
     {
-		AppFacade facade = (AppFacade) AppFacade.Instance;
+		facade = (AppFacade) AppFacade.Instance;
 		facade.Startup(this);
     }
 	
-	
-	public void Update(){
-		_inputManager.Update();
+	public static Facade Facade{
+		get{return _instance.facade;}
 	}
-
-    
+	
+	public static List<IPlugin> PluginList{
+		get{
+			PluginProxy proxy =  _instance.facade.RetrieveProxy(PluginProxy.NAME) as PluginProxy;	
+			if(proxy == null) return new List<IPlugin>();
+			return proxy.GetPluginList();
+		}		
+	}
 }

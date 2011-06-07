@@ -20,8 +20,7 @@ public class GuiManager : MonoBehaviour
             {
                 _go = new GameObject("Graph2D", new Type[1] {typeof (GuiManager)});
                 _instance = _go.GetComponent<GuiManager>();
-                //Unter App anzeigen
-                //_go.transform.parent = GameObject.Find("Graph2D").transform;
+                _go.transform.parent = GameObject.Find("Graph").transform;
             }
             //
             return _instance;

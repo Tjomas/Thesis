@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class AppConsts
 {
+	
+	public const string ROOTNODE = "App";
+	
 	public static readonly bool MOBILE;
 	public static readonly bool EDITOR;
 	public static readonly bool DESKTOP;

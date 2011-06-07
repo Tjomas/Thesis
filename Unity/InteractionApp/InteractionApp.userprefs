@@ -1,11 +1,22 @@
-<Properties>
+﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/intro/VideoIntroDisplay.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/app/plugin/view/component/PluginComponent.cs">
     <Files>
-      <File FileName="Assets/scripts/intro/VideoIntroDisplay.cs" Line="1" Column="3" />
-      <File FileName="Assets/scripts/app/controller/StartupCommand.cs" Line="17" Column="50" />
-      <File FileName="Assets/scripts/gui/GuiSimple.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/app/App.cs" Line="27" Column="24" />
+      <File FileName="Assets/scripts/intro/VideoIntroDisplay.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/framework/FrameworkLoader.cs" Line="30" Column="4" />
+      <File FileName="Assets/scripts/gui/GuiManager.cs" Line="12" Column="1" />
+      <File FileName="Assets/scripts/app/App.cs" Line="22" Column="27" />
+      <File FileName="Assets/scripts/input/InputManager.cs" Line="22" Column="6" />
+      <File FileName="Assets/scripts/app/const/AppConsts.cs" Line="7" Column="39" />
+      <File FileName="Assets/scripts/app/const/NoteConsts.cs" Line="26" Column="56" />
+      <File FileName="Assets/scripts/app/AppFacade.cs" Line="10" Column="1" />
+      <File FileName="Assets/scripts/app/controller/StartupCommand.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/app/console/view/ConsoleMediator.cs" Line="16" Column="2" />
+      <File FileName="Assets/scripts/app/console/model/ConsoleProxy.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/app/console/controller/AddConsoleCommand.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/app/plugin/model/PluginProxy.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/app/plugin/model/vo/PluginConnectVO.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/app/plugin/view/component/PluginComponent.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

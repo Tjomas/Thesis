@@ -81,6 +81,7 @@
      <Compile Include="Assets\scripts\app\const\NoteConsts.cs" />
      <Compile Include="Assets\scripts\app\const\NoteTypeConsts.cs" />
      <Compile Include="Assets\scripts\app\controller\StartupCommand.cs" />
+     <Compile Include="Assets\scripts\app\plugin\model\vo\PluginConnectVO.cs" />
      <Compile Include="Assets\scripts\app\plugin\model\PluginProxy.cs" />
      <Compile Include="Assets\scripts\app\plugin\view\component\PluginComponent.cs" />
      <Compile Include="Assets\scripts\app\plugin\view\PluginMediator.cs" />
@@ -90,6 +91,7 @@
      <Compile Include="Assets\scripts\app\pool\view\ObjectMediator.cs" />
      <Compile Include="Assets\scripts\app\App.cs" />
      <Compile Include="Assets\scripts\app\AppFacade.cs" />
+     <Compile Include="Assets\scripts\framework\FrameworkLoader.cs" />
      <Compile Include="Assets\scripts\gui\event\GuiEvent.cs" />
      <Compile Include="Assets\scripts\gui\event\GuiEventType.cs" />
      <Compile Include="Assets\scripts\gui\event\GuiKeyEvent.cs" />
