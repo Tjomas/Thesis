@@ -71,9 +71,9 @@
      <Compile Include="Assets\scripts\PureMVC\Patterns\Observer\Notifier.cs" />
      <Compile Include="Assets\scripts\PureMVC\Patterns\Observer\Observer.cs" />
      <Compile Include="Assets\scripts\PureMVC\Patterns\Proxy\Proxy.cs" />
+     <Compile Include="Assets\scripts\app\console\controller\model\vo\MessageVO.cs" />
+     <Compile Include="Assets\scripts\app\console\controller\model\ConsoleProxy.cs" />
      <Compile Include="Assets\scripts\app\console\controller\AddConsoleCommand.cs" />
-     <Compile Include="Assets\scripts\app\console\model\vo\MessageVO.cs" />
-     <Compile Include="Assets\scripts\app\console\model\ConsoleProxy.cs" />
      <Compile Include="Assets\scripts\app\console\view\component\ConsoleComponent.cs" />
      <Compile Include="Assets\scripts\app\console\view\component\SensorComponent.cs" />
      <Compile Include="Assets\scripts\app\console\view\ConsoleMediator.cs" />
@@ -81,7 +81,11 @@
      <Compile Include="Assets\scripts\app\const\NoteConsts.cs" />
      <Compile Include="Assets\scripts\app\const\NoteTypeConsts.cs" />
      <Compile Include="Assets\scripts\app\controller\StartupCommand.cs" />
+     <Compile Include="Assets\scripts\app\plugin\controller\AddInterestsCommand.cs" />
+     <Compile Include="Assets\scripts\app\plugin\model\vo\InteractionInterestVO.cs" />
+     <Compile Include="Assets\scripts\app\plugin\model\vo\InterestsListVO.cs" />
      <Compile Include="Assets\scripts\app\plugin\model\vo\PluginConnectVO.cs" />
+     <Compile Include="Assets\scripts\app\plugin\model\InterestProxy.cs" />
      <Compile Include="Assets\scripts\app\plugin\model\PluginProxy.cs" />
      <Compile Include="Assets\scripts\app\plugin\view\component\PluginComponent.cs" />
      <Compile Include="Assets\scripts\app\plugin\view\PluginMediator.cs" />
@@ -91,6 +95,7 @@
      <Compile Include="Assets\scripts\app\pool\view\ObjectMediator.cs" />
      <Compile Include="Assets\scripts\app\App.cs" />
      <Compile Include="Assets\scripts\app\AppFacade.cs" />
+     <Compile Include="Assets\scripts\framework\AbstractFrameworkLoader.cs" />
      <Compile Include="Assets\scripts\framework\FrameworkLoader.cs" />
      <Compile Include="Assets\scripts\gui\event\GuiEvent.cs" />
      <Compile Include="Assets\scripts\gui\event\GuiEventType.cs" />

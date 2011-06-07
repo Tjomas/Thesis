@@ -1,22 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/app/plugin/view/component/PluginComponent.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/app/controller/StartupCommand.cs">
     <Files>
-      <File FileName="Assets/scripts/intro/VideoIntroDisplay.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/framework/FrameworkLoader.cs" Line="30" Column="4" />
-      <File FileName="Assets/scripts/gui/GuiManager.cs" Line="12" Column="1" />
-      <File FileName="Assets/scripts/app/App.cs" Line="22" Column="27" />
-      <File FileName="Assets/scripts/input/InputManager.cs" Line="22" Column="6" />
-      <File FileName="Assets/scripts/app/const/AppConsts.cs" Line="7" Column="39" />
-      <File FileName="Assets/scripts/app/const/NoteConsts.cs" Line="26" Column="56" />
-      <File FileName="Assets/scripts/app/AppFacade.cs" Line="10" Column="1" />
-      <File FileName="Assets/scripts/app/controller/StartupCommand.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/app/console/view/ConsoleMediator.cs" Line="16" Column="2" />
-      <File FileName="Assets/scripts/app/console/model/ConsoleProxy.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/app/console/controller/AddConsoleCommand.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/app/plugin/model/PluginProxy.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/app/plugin/model/vo/PluginConnectVO.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/app/plugin/view/component/PluginComponent.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/framework/FrameworkLoader.cs" Line="25" Column="20" />
+      <File FileName="Assets/scripts/framework/AbstractFrameworkLoader.cs" Line="20" Column="64" />
+      <File FileName="Assets/scripts/intro/VideoIntroDisplay.cs" Line="48" Column="37" />
+      <File FileName="Assets/scripts/app/plugin/model/vo/InteractionInterestVO.cs" Line="9" Column="7" />
+      <File FileName="Assets/scripts/app/const/NoteConsts.cs" Line="25" Column="50" />
+      <File FileName="Assets/scripts/app/plugin/model/vo/InterestsListVO.cs" Line="10" Column="14" />
+      <File FileName="Assets/scripts/app/plugin/model/InterestProxy.cs" Line="36" Column="25" />
+      <File FileName="Assets/scripts/app/plugin/controller/AddInterestsCommand.cs" Line="10" Column="34" />
+      <File FileName="Assets/scripts/app/console/view/ConsoleMediator.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/app/plugin/view/component/PluginComponent.cs" Line="12" Column="1" />
+      <File FileName="Assets/scripts/net/Logger.cs" Line="17" Column="48" />
+      <File FileName="Assets/scripts/app/controller/StartupCommand.cs" Line="52" Column="83" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -24,6 +24,7 @@ public class NoteConsts
 	//PLUGIN
 	//Einem Plugin ein Interaktionsobject hinzufügen
 	public const string PLUGIN_CONNECT = "plugin_connect";
+	public const string PLUGIN_INTERESTS = "plugin_interests";
 }
 
 

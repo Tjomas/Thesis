@@ -45,11 +45,11 @@ public class VideoIntroDisplay : MonoBehaviour
 #if !MOBILE_PLATFORM		
 		if(Input.anyKeyDown || !MovieTex.isPlaying){
 			_skipIntro = true;
-			Application.LoadLevel("main");
+			Application.LoadLevel("levelfirst");
 		}
 #else		
 		//Mobile
-		Application.LoadLevel("main");
+		Application.LoadLevel("levelfirst");
 #endif		
 	}
 }

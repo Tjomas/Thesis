@@ -1,14 +1,18 @@
 using System;
+using UnityEngine;
+
 namespace De.Wellenblau.Inferfaces
 {
 	public interface IPlugin
 	{
 		string GetID();
+		void registerGameObject(GameObject go);
+		void unregisterGameObject(GameObject go);
 		
-		//bool Translate();
-		//bool Scale();
-		//bool Rotate();
-		//bool Transform();
+		void Start(GameObject go);
+		void Awake(GameObject go);
+		void Update(GameObject go);
+		void OnGUI(GameObject go);
 	}
 	
 	public enum PluginPort{

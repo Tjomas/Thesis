@@ -1,11 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="IPlugin/IPlugin.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="InteractionOne/InteractionOne.cs">
     <Files>
-      <File FileName="IPlugin/IPlugin.cs" Line="15" Column="14" />
-      <File FileName="InteractionOne/InteractionOne.cs" Line="9" Column="28" />
-      <File FileName="IPlugin/AbstractPlugin.cs" Line="8" Column="10" />
+      <File FileName="IPlugin/IPlugin.cs" Line="12" Column="3" />
+      <File FileName="InteractionOne/InteractionOne.cs" Line="16" Column="46" />
+      <File FileName="IPlugin/AbstractPlugin.cs" Line="40" Column="45" />
       <File FileName="IPlugin/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="IPlugin/IPluginCallback.cs" Line="14" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

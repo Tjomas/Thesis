@@ -14,7 +14,7 @@ public class Logger
 	}
 	
 	private static Socket sock = null;
-    private static string host = "127.0.0.1";
+    private static string host = "172.25.83.106";
     private static int port = 4444;
 	private static List<byte[]> _queue;
 	

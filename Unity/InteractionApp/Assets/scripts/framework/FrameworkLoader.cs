@@ -2,18 +2,10 @@ using UnityEngine;
 using System.Collections.Generic;
 using De.Wellenblau.Inferfaces;
 
-public class FrameworkLoader : MonoBehaviour {
+public class FrameworkLoader : AbstractFrameworkLoader {
 	
-	private AsyncOperation _asOp;
-	
-	// Use this for initialization
-	void Start () {
-		_asOp = Application.LoadLevelAdditiveAsync("main");
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(_asOp.isDone){
+	protected override void PluginConnect ()
+	{
 			App.Facade.SendNotification(NoteConsts.CONSOLE_ADDMESSAGE,new MessageVO("LOL"));
 			
 			List<IPlugin> plugins = App.PluginList;
@@ -22,13 +14,22 @@ public class FrameworkLoader : MonoBehaviour {
 			
 			foreach(IPlugin p in plugins){
 				Debug.Log("Bähhhm " + p.GetID() + Random.value);
+				p.registerGameObject(cube);
 			}
 			
 			PluginConnectVO vo = new PluginConnectVO();
 			
 			App.Facade.SendNotification(NoteConsts.PLUGIN_CONNECT,new PluginConnectVO());
-			
-			Destroy(this.gameObject);
-		}
+	}
+	
+	protected override List<InteractionInterestVO> ListInterests(){
+		//new list
+		List<InteractionInterestVO> lst = new List<InteractionInterestVO>();	
+		
+		//shake
+		lst.Add(new InteractionInterestVO("shake"));
+		
+		//return interests
+		return lst;
 	}
 }

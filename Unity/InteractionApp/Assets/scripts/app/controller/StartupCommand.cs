@@ -48,8 +48,11 @@ public class StartupCommand : SimpleCommand, ICommand
 	}
 	
 	private void initPlugin(){
+		//Commands anlgen
+		Facade.RegisterCommand(NoteConsts.PLUGIN_INTERESTS,typeof(AddInterestsCommand));
 		//Proxies anlegen
 		Facade.RegisterProxy(new PluginProxy());
+		Facade.RegisterProxy(new InterestProxy());
 		//Mediatoren anlegen
 		Facade.RegisterMediator(new PluginMediator());
 	}
