@@ -1,4 +1,4 @@
-#define MOBILE_PLATFORM
+//#define MOBILE_PLATFORM
 
 using UnityEngine;
 using System.Collections;
@@ -27,8 +27,9 @@ public class VideoIntroDisplay : MonoBehaviour
 		GuiSimple vid = new GuiSimple("DrawTexture",Tools.List("rect", new Rect(0, 0, Screen.width, Screen.height), "texture", MovieTex, "scaleMode",ScaleMode.ScaleAndCrop));
         GuiManager.AddChild(vid);
 		
+		audio.clip = MovieTex.audioClip;
 		MovieTex.Play();
-		gameObject.audio.Play();
+		audio.Play();
 #else
 		iPhoneSettings.screenCanDarken = false;
 		iPhoneUtils.PlayMovie("wbi_intro.mp4",Color.white,iPhoneMovieControlMode.CancelOnTouch,iPhoneMovieScalingMode.Fill);	
@@ -48,10 +49,7 @@ public class VideoIntroDisplay : MonoBehaviour
 		}
 #else		
 		//Mobile
-		//if(Input.anyKeyDown || _duration <= Time.time - _startTime){
-			//_skipIntro = true;
-			Application.LoadLevel("main");
-		//}
+		Application.LoadLevel("main");
 #endif		
 	}
 }
