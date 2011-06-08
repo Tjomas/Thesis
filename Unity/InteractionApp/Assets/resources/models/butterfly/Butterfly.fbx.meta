@@ -1,0 +1,69 @@
+fileFormatVersion: 1
+guid: eb0fca1c825c4436fbc6a48ddcd5be57
+ModelImporter:
+  importerVersion: 7
+  meshes:
+    scaleFactor: 1
+    useFileUnits: 1
+    meshCompression: 0
+    generateColliders: 0
+    swapUVs: 0
+  tangentSpace:
+    normalImportMode: 0
+    tangentImportMode: 1
+    smoothingAngle: 60
+    splitTangents: 1
+  materials:
+    generation: 1
+  animations:
+    generation: 3
+    bakeAnimations: 0
+    animationCompression: 1
+    animationWrapMode: 0
+    splitAnimations: 1
+  nodeInfo:
+    BUT_Body:
+    - 100000
+    - 400000
+    - 3300000
+    - 2300000
+    BUT_Leg:
+    - 100002
+    - 400002
+    - 3300002
+    - 2300002
+    //RootNode:
+    - 100004
+    - 400004
+    - 11100000
+    BUT_2:
+    - 100006
+    - 400006
+    - 3300004
+    - 2300004
+    BUT_Eye:
+    - 100008
+    - 400008
+    - 3300006
+    - 2300006
+    BUT_Wing_R_00:
+    - 100010
+    - 400010
+    - 3300008
+    - 2300008
+    BUT_Wing_R_001:
+    - 100012
+    - 400012
+    - 3300010
+    - 2300010
+AssetImporter:
+  importerVersion: 1
+  fileIDToRecycleName:
+    4300000: BUT_Wing_R_00
+    4300002: BUT_Wing_R_001
+    4300004: BUT_2
+    4300006: BUT_Body
+    4300008: BUT_Eye
+    4300010: BUT_Leg
+    7400000: Default Take //// Germano Martins_Small Insects_Red Butterflies
+    7400002: Default Take //// Butterfly

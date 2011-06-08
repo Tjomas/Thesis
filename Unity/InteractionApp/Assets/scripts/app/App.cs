@@ -21,7 +21,7 @@ public class App: MonoBehaviour{
     {
 		facade = (AppFacade) AppFacade.Instance;
 		facade.Startup(this);
-    }
+	}
 	
 	public static Facade Facade{
 		get{return _instance.facade;}
