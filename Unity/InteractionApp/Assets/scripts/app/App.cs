@@ -8,6 +8,8 @@ public class App: MonoBehaviour{
 	private static App _instance;
 	private AppFacade facade;
 	
+	private static Logger _logger = new Logger("APP");
+	
     public App()
     {
         _instance = this;
@@ -19,6 +21,8 @@ public class App: MonoBehaviour{
 
     public void Start ()
     {
+		_logger.Error("BLA");
+		
 		facade = (AppFacade) AppFacade.Instance;
 		facade.Startup(this);
 	}

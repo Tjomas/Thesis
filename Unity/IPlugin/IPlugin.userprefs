@@ -1,13 +1,27 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="InteractionOne/InteractionOne.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="IPlugin/IPluginCallback.cs">
     <Files>
-      <File FileName="IPlugin/IPlugin.cs" Line="12" Column="3" />
-      <File FileName="InteractionOne/InteractionOne.cs" Line="16" Column="46" />
-      <File FileName="IPlugin/AbstractPlugin.cs" Line="40" Column="45" />
+      <File FileName="IPlugin/IPluginCallback.bak" Line="54" Column="4" />
+      <File FileName="IPlugin/IPlugin.cs" Line="2" Column="3" />
+      <File FileName="InteractionOne/InteractionOne.cs" Line="23" Column="5" />
+      <File FileName="IPlugin/AbstractPlugin.cs" Line="43" Column="47" />
       <File FileName="IPlugin/AssemblyInfo.cs" Line="1" Column="1" />
-      <File FileName="IPlugin/IPluginCallback.cs" Line="14" Column="18" />
+      <File FileName="IPlugin/IPluginCallback.cs" Line="8" Column="30" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="InteractionOne" expanded="True">
+            <Node name="References" expanded="True" />
+          </Node>
+          <Node name="IPlugin" expanded="True">
+            <Node name="References" expanded="True" />
+            <Node name="IPluginCallback.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

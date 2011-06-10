@@ -1,0 +1,20 @@
+<Combine fileversion="2.0">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry build="True" name="IPlugin" configuration="Debug" />
+      <Entry build="True" name="InteractionOne" configuration="Debug" />
+    </Configuration>
+    <Configuration name="Release" ctype="CombineConfiguration">
+      <Entry build="True" name="IPlugin" configuration="Release" />
+      <Entry build="True" name="InteractionOne" configuration="Release" />
+    </Configuration>
+  </Configurations>
+  <StartMode startupentry="IPlugin" single="True">
+    <Execute type="None" entry="IPlugin" />
+    <Execute type="None" entry="InteractionOne" />
+  </StartMode>
+  <Entries>
+    <Entry filename="IPlugin/IPlugin.mdp" />
+    <Entry filename="InteractionOne/InteractionOne.mdp" />
+  </Entries>
+</Combine>
