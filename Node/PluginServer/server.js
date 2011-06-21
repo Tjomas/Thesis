@@ -9,10 +9,11 @@ var server = net.createServer(function (socket) {
     socket.on("data",function(command){
 
         //get rid of the fucking \n
-        //command = command.substr(0,command.length-2);
+        command = command.substr(0,command.length-2);
 
         console.log(command);
         switch(command){
+            case "r":
             case "requestPluginList":
                 loadPluginList(socket);
                 break;
@@ -27,23 +28,27 @@ var server = net.createServer(function (socket) {
 });
 
 function loadPluginList(socket){
+
     console.log("-> loadPluginList");
+
+    var plugins = [];
+
     fs.readdir("plugins", function(err, files) {
         if (err) throw err; //early out
-
+        //
         for (var i = 0; i < files.length; ++i) {
-
-
-            //socket.write(files[i] + "\n");
-
-
-            fs.readFile("plugins/" + files[i], function (errRead, data) {
-                if (errRead) throw errRead;
-            //    //console.log(data);
-                
-                socket.write(data);
-            });
+           loadFile(files[i],function (filename, data){
+               socket.write(JSON.stringify({id:filename,result:data}));
+           });
         }
+    });
+}
+
+function loadFile(filename, callback){
+    fs.readFile("plugins/" + filename, function (errRead, data) {
+        if (errRead) throw errRead;
+        //
+        callback(filename,data);
     });
 }
 
