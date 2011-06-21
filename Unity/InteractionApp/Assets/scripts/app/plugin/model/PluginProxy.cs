@@ -2,6 +2,9 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
 using De.Wellenblau.Inferfaces;
 using UnityEngine;
 using PureMVC.Patterns;
@@ -18,7 +21,8 @@ public class PluginProxy: Proxy , IProxy
 	
     public PluginProxy():base(NAME)
     {
-        LoadDlls();
+        //LoadDlls();
+		ReadPlugins();
 		Data = Plugins;
     }
 
@@ -27,11 +31,6 @@ public class PluginProxy: Proxy , IProxy
         return (List<IPlugin>)Data;
     }
 	
-	/*IEnumerator Start() {
-        WWW www = new WWW(url);
-        yield return www;
-        _logger.Error("YIIIIIEEEEEELLLLLDDDDDDD");
-    }*/
 
     private void LoadDlls()
     {
@@ -40,10 +39,7 @@ public class PluginProxy: Proxy , IProxy
      	Object[] byteAsset = Resources.LoadAll("plugins", typeof(TextAsset));
 		
 		_logger.Trace("sdsdsdsdsd 2");
-		
-		
-		Start();
-		
+
 		int i = 0;
 		
 		int j = 0;
@@ -62,51 +58,123 @@ public class PluginProxy: Proxy , IProxy
 			
 			_logger.Trace("sdsdsdsdsd 5."+i);
 			
-			try{
-				_logger.Trace("sdsdsdsdsd 6a."+i + " " + bytes.ToString()+ " " + bytes.Length);
-				
-				//WWW www = new WWW("http://www.thomas-reufer.de/InteractionOne.bytes");
-		        //yield return www;
-		        //bytes = www.bytes;
-				
-				bytes = StringToByteArray("###################### DebugString");
-				
-            	Assembly Asm = Assembly.Load(bytes);
-				
-				_logger.Trace("sdsdsdsdsd 6b."+i);
-			
-				
-				foreach (Type AsmType in Asm.GetTypes())
-	            {
-					j++;
-					
-					_logger.Trace("sdsdsdsdsd 7."+i+"."+j);
-					
-	                if (AsmType.GetInterface("IPlugin") != null)
-	                {
-						_logger.Trace("sdsdsdsdsd 8."+i+"."+j);
-						
-	                    IPlugin plugin = Activator.CreateInstance(AsmType) as IPlugin;
-						
-						_logger.Trace("sdsdsdsdsd 9."+i+"."+j);
-						
-	                    if(plugin != null){
-	                        Plugins.Add(plugin);
-	                     	
-							_logger.Trace("sdsdsdsdsd 10."+i+"."+j);
-							
-							SendNotification(NoteConsts.CONSOLE_ADDMESSAGE,new MessageVO("Plugin loaded" + plugin.ToString()));
-	                    }
-	                }
-	            }
-			}
-			catch(Exception e){
-				
-				_logger.Trace(e.Message);	
-				
-			}
+			AddPlugin(bytes);
         }
     }
+	
+	private void AddPlugin(byte[] bytes){
+		try{
+			//_logger.Trace("sdsdsdsdsd 6a."+i + " " + bytes.ToString()+ " " + bytes.Length);
+			
+			//WWW www = new WWW("http://www.thomas-reufer.de/InteractionOne.bytes");
+	        //yield return www;
+	        //bytes = www.bytes;
+			
+			//bytes = StringToByteArray("###################### DebugString");
+			
+        	Assembly Asm = Assembly.Load(bytes);
+			
+			//_logger.Trace("sdsdsdsdsd 6b."+i);
+		
+			
+			foreach (Type AsmType in Asm.GetTypes())
+            {
+				//j++;
+				
+				//_logger.Trace("sdsdsdsdsd 7."+i+"."+j);
+				
+                if (AsmType.GetInterface("IPlugin") != null)
+                {
+					//_logger.Trace("sdsdsdsdsd 8."+i+"."+j);
+					
+                    IPlugin plugin = Activator.CreateInstance(AsmType) as IPlugin;
+					
+					//_logger.Trace("sdsdsdsdsd 9."+i+"."+j);
+					
+                    if(plugin != null){
+                        Plugins.Add(plugin);
+                     	
+						//_logger.Trace("sdsdsdsdsd 10."+i+"."+j);
+						
+						SendNotification(NoteConsts.CONSOLE_ADDMESSAGE,new MessageVO("Plugin loaded" + plugin.ToString()));
+                    }
+                }
+            }
+		}
+		catch(Exception e){
+			
+			_logger.Trace(e.Message);	
+			
+		}
+		
+	}
+	
+	
+	private void ReadPlugins(){
+		/*IPAddress ipAddresse = IPAddress.Parse(NetConsts.SERVER_IP);
+			
+		// Instanziere einen Endpunkt mit der ersten IP-Adresse
+		IPEndPoint ipEo = new IPEndPoint(ipAddresse, 8000);
+		
+		// IPv4 oder IPv6, Stream Socket, TCP
+		Socket sock = new Socket(ipEo.AddressFamily,
+		                  SocketType.Stream,
+		                  ProtocolType.Tcp);
+		
+		// Öffne eine Socket Verbindung
+		sock.Connect(ipEo);
+	
+		try
+		{
+			String szData = "requestPluginList";
+			byte[] byData = System.Text.Encoding.ASCII.GetBytes(szData);
+			sock.Send(byData);
+		}
+		catch (SocketException se)
+		{
+		
+		}
+		
+		byte [] buffer = new byte[1024];
+		int iRx = sock.Receive (buffer);
+		
+		AddPlugin(buffer);
+		*/
+		
+		TcpClient MyClient = new TcpClient();
+		MyClient.Connect(NetConsts.SERVER_IP, 8000);
+		NetworkStream MyNetStream = MyClient.GetStream();
+		
+		if(MyNetStream.CanWrite && MyNetStream.CanRead)
+		{
+			// Does a simple write.
+			Byte[] sendBytes = Encoding.ASCII.GetBytes("requestPluginList");
+			MyNetStream.Write(sendBytes, 0, sendBytes.Length);
+			
+			// Reads the NetworkStream into a byte buffer.
+			byte[] bytes = new byte[MyClient.ReceiveBufferSize];
+			MyNetStream.Read(bytes, 0, (int) MyClient.ReceiveBufferSize);
+			
+			_logger.Trace("bytes recived");
+			
+			AddPlugin(bytes);
+			
+			//Returns the data received from the host to the console.
+			//string returndata = Encoding.ASCII.GetString(bytes);
+			//_logger.Trace("This is what the host returned to you: " + returndata);
+		
+		}
+		else if (!MyNetStream.CanRead)
+		{
+			_logger.Trace("You can not write data to this stream");
+			MyClient.Close();
+		}
+		else if (!MyNetStream.CanWrite)
+		{             
+			_logger.Trace("You can not read data from this stream");
+			MyClient.Close();
+		}
+	}
 	
 	
 	//AssemblyName[] referencedAssemblies = AsmType.Assembly.GetReferencedAssemblies();
@@ -114,9 +182,7 @@ public class PluginProxy: Proxy , IProxy
 	//{
 	//    Debug.Log(referencedAssembly.Name);
 	//}
-	
 	//Debug.Log(AsmType.GetInterface("IPlugin").FullName);
-	
 	//Debug.Log(AsmType.FullName);
 	//Debug.Log(AsmType.GUID);
 	//Debug.Log(typeof(IPlugin).FullName);

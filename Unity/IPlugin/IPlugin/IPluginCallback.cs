@@ -1,11 +1,10 @@
-
 using System;
-//using UnityEngine;
+using UnityEngine;
 using De.Wellenblau.Inferfaces;
 
 namespace De.Wellenblau.Interactions
 {
-	public class IPluginCallback
+	public class IPluginCallback:MonoBehaviour
 	{
 		private IPlugin _plugin;
 		public bool _init = false;
@@ -16,7 +15,7 @@ namespace De.Wellenblau.Interactions
 				_plugin = value;
 			}
 		}
-	/*	
+		
 		public void Unregister(){
 			Destroy(this);
 		}
@@ -49,7 +48,5 @@ namespace De.Wellenblau.Interactions
 			}
 			return false;
 		}
-		
-		*/
 	}
 }

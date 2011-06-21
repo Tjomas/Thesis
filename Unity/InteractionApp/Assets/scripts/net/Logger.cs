@@ -14,7 +14,7 @@ public class Logger
 	}
 	
 	private static Socket sock = null;
-    private static string host = "172.25.83.106";
+    private static string host = NetConsts.SERVER_IP;
     private static int port = 4444;
 	private static List<byte[]> _queue;
 	

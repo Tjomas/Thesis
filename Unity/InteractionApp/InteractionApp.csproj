@@ -18,7 +18,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_3_3_0;UNITY_3_3;UNITY_EDITOR;ENABLE_PROFILER;UNITY_IOS;UNITY_IPHONE;ENABLE_GENERICS;ENABLE_NETWORK;ENABLE_WWW</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_3_3_0;UNITY_3_3;UNITY_EDITOR;ENABLE_PROFILER;UNITY_ANDROID;ENABLE_GENERICS;ENABLE_NETWORK;ENABLE_WWW</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -112,6 +112,7 @@
      <Compile Include="Assets\scripts\input\InputManager.cs" />
      <Compile Include="Assets\scripts\intro\VideoIntroDisplay.cs" />
      <Compile Include="Assets\scripts\net\Logger.cs" />
+     <Compile Include="Assets\scripts\net\NetConsts.cs" />
      <Compile Include="Assets\scripts\tween\iTween.cs" />
      <Compile Include="Assets\scripts\utils\ScreenTool.cs" />
      <Compile Include="Assets\scripts\utils\Tools.cs" />

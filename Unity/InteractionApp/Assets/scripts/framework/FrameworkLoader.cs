@@ -15,7 +15,7 @@ public class FrameworkLoader : AbstractFrameworkLoader {
 			foreach(IPlugin p in plugins){
 				Debug.Log("Bähhhm " + p.GetID() + Random.value);
 			
-				/*p.registerGameObject(GameObject.Find("Butterfly1"));
+				p.registerGameObject(GameObject.Find("Butterfly1"));
 				p.registerGameObject(GameObject.Find("Butterfly2"));
 				p.registerGameObject(GameObject.Find("Butterfly3"));
 				p.registerGameObject(GameObject.Find("Butterfly4"));
@@ -25,7 +25,7 @@ public class FrameworkLoader : AbstractFrameworkLoader {
 				p.registerGameObject(GameObject.Find("Butterfly8"));
 				p.registerGameObject(GameObject.Find("Butterfly9"));
 				p.registerGameObject(GameObject.Find("Butterfly10"));
-				*/
+				
 			}
 			
 			PluginConnectVO vo = new PluginConnectVO();

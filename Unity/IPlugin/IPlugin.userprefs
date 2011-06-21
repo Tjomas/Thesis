@@ -1,23 +1,21 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="IPlugin/IPluginCallback.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="InteractionOne/InteractionOne.cs">
     <Files>
-      <File FileName="IPlugin/IPluginCallback.bak" Line="54" Column="4" />
-      <File FileName="IPlugin/IPlugin.cs" Line="2" Column="3" />
-      <File FileName="InteractionOne/InteractionOne.cs" Line="23" Column="5" />
-      <File FileName="IPlugin/AbstractPlugin.cs" Line="43" Column="47" />
+      <File FileName="IPlugin/IPlugin.cs" Line="2" Column="1" />
+      <File FileName="InteractionOne/InteractionOne.cs" Line="23" Column="1" />
+      <File FileName="IPlugin/AbstractPlugin.cs" Line="17" Column="58" />
       <File FileName="IPlugin/AssemblyInfo.cs" Line="1" Column="1" />
-      <File FileName="IPlugin/IPluginCallback.cs" Line="8" Column="30" />
+      <File FileName="IPlugin/IPluginCallback.cs" Line="7" Column="44" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="InteractionOne" expanded="True">
+          <Node name="InteractionOne" expanded="True" selected="True">
             <Node name="References" expanded="True" />
           </Node>
           <Node name="IPlugin" expanded="True">
             <Node name="References" expanded="True" />
-            <Node name="IPluginCallback.cs" selected="True" />
           </Node>
         </State>
       </Pad>
