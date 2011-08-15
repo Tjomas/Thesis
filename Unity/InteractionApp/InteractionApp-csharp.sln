@@ -1,7 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 
-Project("{ADF714A0-8BDD-36E7-0A8A-F1FBE5D94E4D}") = "InteractionApp", "Assembly-CSharp.csproj", "{15821717-8F6D-2C55-C646-258DFA3ABF68}"
+Project("{ADF714A0-8BDD-36E7-0A8A-F1FBE5D94E4D}") = "InteractionApp", "Assembly-CSharp-vs.csproj", "{15821717-8F6D-2C55-C646-258DFA3ABF68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

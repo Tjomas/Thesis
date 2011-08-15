@@ -1,9 +1,51 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/app/controller/StartupCommand.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/app/plugin/model/PluginProxy.cs">
     <Files>
-      <File FileName="Assets/scripts/app/controller/StartupCommand.cs" Line="17" Column="50" />
+      <File FileName="Assets/scripts/framework/FrameworkLoader.cs" Line="9" Column="4" />
+      <File FileName="Assets/scripts/app/App.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/app/AppFacade.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/app/controller/StartupCommand.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/app/console/view/ConsoleMediator.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/app/console/view/component/ConsoleComponent.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/PureMVC/Patterns/Observer/Observer.cs" Line="77" Column="1" />
+      <File FileName="Assets/scripts/framework/AbstractFrameworkLoader.cs" Line="19" Column="58" />
+      <File FileName="Assets/scripts/net/Logger.cs" Line="79" Column="14" />
+      <File FileName="Assets/scripts/app/pool/view/ObjectMediator.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/app/pool/model/ObjectProxy.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/app/pool/controller/LoadObjectCommand.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/app/pool/model/vo/ObjectVO.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/app/plugin/controller/AddInterestsCommand.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/app/plugin/model/PluginProxy.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="scripts" expanded="True">
+                <Node name="app" expanded="True">
+                  <Node name="plugin" expanded="True">
+                    <Node name="controller" expanded="True" />
+                    <Node name="model" expanded="True">
+                      <Node name="PluginProxy.cs" selected="True" />
+                    </Node>
+                    <Node name="view" expanded="True" />
+                  </Node>
+                  <Node name="pool" expanded="True">
+                    <Node name="controller" expanded="True" />
+                    <Node name="model" expanded="True">
+                      <Node name="vo" expanded="True" />
+                    </Node>
+                    <Node name="view" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
