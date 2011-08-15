@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>9.0.21022</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{15821717-8F6D-2C55-C646-258DFA3ABF68}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_3_4_0;UNITY_3_4;UNITY_EDITOR;ENABLE_PROFILER;UNITY_ANDROID;ENABLE_GENERICS;ENABLE_TERRAIN;ENABLE_NETWORK;ENABLE_WWW</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="UnityEngine">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\scripts\PureMVC\Core\Controller.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Core\Model.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Core\View.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\ICommand.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IController.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IFacade.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IMediator.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IModel.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\INotification.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\INotifier.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IObserver.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IProxy.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Interfaces\IView.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Command\MacroCommand.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Command\SimpleCommand.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Facade\Facade.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Mediator\Mediator.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Observer\Notification.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Observer\Notifier.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Observer\Observer.cs" />
+     <Compile Include="Assets\scripts\PureMVC\Patterns\Proxy\Proxy.cs" />
+     <Compile Include="Assets\scripts\app\App.cs" />
+     <Compile Include="Assets\scripts\app\AppFacade.cs" />
+     <Compile Include="Assets\scripts\app\console\controller\AddConsoleCommand.cs" />
+     <Compile Include="Assets\scripts\app\console\controller\model\ConsoleProxy.cs" />
+     <Compile Include="Assets\scripts\app\console\controller\model\vo\MessageVO.cs" />
+     <Compile Include="Assets\scripts\app\console\view\ConsoleMediator.cs" />
+     <Compile Include="Assets\scripts\app\console\view\component\ConsoleComponent.cs" />
+     <Compile Include="Assets\scripts\app\console\view\component\SensorComponent.cs" />
+     <Compile Include="Assets\scripts\app\const\AppConsts.cs" />
+     <Compile Include="Assets\scripts\app\const\NoteConsts.cs" />
+     <Compile Include="Assets\scripts\app\const\NoteTypeConsts.cs" />
+     <Compile Include="Assets\scripts\app\controller\StartupCommand.cs" />
+     <Compile Include="Assets\scripts\app\plugin\controller\AddInterestsCommand.cs" />
+     <Compile Include="Assets\scripts\app\plugin\model\InterestProxy.cs" />
+     <Compile Include="Assets\scripts\app\plugin\model\PluginProxy.cs" />
+     <Compile Include="Assets\scripts\app\plugin\model\vo\InteractionInterestVO.cs" />
+     <Compile Include="Assets\scripts\app\plugin\model\vo\InterestsListVO.cs" />
+     <Compile Include="Assets\scripts\app\plugin\model\vo\PluginConnectVO.cs" />
+     <Compile Include="Assets\scripts\app\plugin\view\PluginMediator.cs" />
+     <Compile Include="Assets\scripts\app\plugin\view\component\PluginComponent.cs" />
+     <Compile Include="Assets\scripts\app\pool\controller\LoadObjectCommand.cs" />
+     <Compile Include="Assets\scripts\app\pool\model\ObjectProxy.cs" />
+     <Compile Include="Assets\scripts\app\pool\model\vo\ObjectVO.cs" />
+     <Compile Include="Assets\scripts\app\pool\view\ObjectMediator.cs" />
+     <Compile Include="Assets\scripts\framework\AbstractFrameworkLoader.cs" />
+     <Compile Include="Assets\scripts\framework\FrameworkLoader.cs" />
+     <Compile Include="Assets\scripts\gui\Button.cs" />
+     <Compile Include="Assets\scripts\gui\GuiDisplayObject.cs" />
+     <Compile Include="Assets\scripts\gui\GuiGroup.cs" />
+     <Compile Include="Assets\scripts\gui\GuiManager.cs" />
+     <Compile Include="Assets\scripts\gui\GuiPngSequence.cs" />
+     <Compile Include="Assets\scripts\gui\GuiScaleTexture.cs" />
+     <Compile Include="Assets\scripts\gui\GuiSimple.cs" />
+     <Compile Include="Assets\scripts\gui\GuiSlider.cs" />
+     <Compile Include="Assets\scripts\gui\GuiWidget.cs" />
+     <Compile Include="Assets\scripts\gui\event\GuiEvent.cs" />
+     <Compile Include="Assets\scripts\gui\event\GuiEventType.cs" />
+     <Compile Include="Assets\scripts\gui\event\GuiKeyEvent.cs" />
+     <Compile Include="Assets\scripts\input\InputManager.cs" />
+     <Compile Include="Assets\scripts\intro\VideoIntroDisplay.cs" />
+     <Compile Include="Assets\scripts\net\Logger.cs" />
+     <Compile Include="Assets\scripts\net\NetConsts.cs" />
+     <Compile Include="Assets\scripts\tween\iTween.cs" />
+     <Compile Include="Assets\scripts\utils\ScreenTool.cs" />
+     <Compile Include="Assets\scripts\utils\Tools.cs" />
+ <Reference Include="Assets\dlls\IPlugin">
+ <HintPath>Assets\dlls\IPlugin.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
+	

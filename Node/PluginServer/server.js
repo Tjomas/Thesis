@@ -53,4 +53,9 @@ function loadFile(filename, callback){
     });
 }
 
-server.listen(8000, "172.25.83.106");
+//server.listen(8000, "172.25.83.106");
+
+server.listen(function() {
+  address = server.address();
+  console.log("opened server on %j", address);
+});

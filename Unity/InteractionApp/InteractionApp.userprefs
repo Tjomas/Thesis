@@ -1,10 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/app/plugin/model/PluginProxy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/gui/GuiSlider.cs">
     <Files>
+      <File FileName="Assets/scripts/app/AppFacade.cs" Line="41" Column="2" />
+      <File FileName="Assets/scripts/app/console/view/component/SensorComponent.cs" Line="48" Column="64" />
       <File FileName="Assets/scripts/app/plugin/model/PluginProxy.cs" Line="176" Column="4" />
       <File FileName="Assets/scripts/app/controller/StartupCommand.cs" Line="54" Column="31" />
-      <File FileName="Assets/scripts/gui/GuiSlider.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/gui/GuiSlider.cs" Line="28" Column="53" />
       <File FileName="Assets/scripts/framework/FrameworkLoader.cs" Line="36" Column="22" />
       <File FileName="Assets/scripts/net/Logger.cs" Line="66" Column="14" />
       <File FileName="Assets/scripts/gui/GuiPngSequence.cs" Line="79" Column="17" />
@@ -14,30 +16,15 @@
       <File FileName="Assets/scripts/gui/GuiScaleTexture.cs" Line="31" Column="26" />
       <File FileName="Assets/scripts/app/plugin/view/component/PluginComponent.cs" Line="32" Column="52" />
       <File FileName="Assets/scripts/framework/AbstractFrameworkLoader.cs" Line="5" Column="1" />
-      <File FileName="Assets/scripts/app/AppFacade.cs" Line="41" Column="2" />
       <File FileName="Assets/scripts/app/console/view/component/ConsoleComponent.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/app/console/view/component/SensorComponent.cs" Line="76" Column="3" />
       <File FileName="Assets/scripts/app/console/view/ConsoleMediator.cs" Line="1" Column="1" />
       <File FileName="Assets/scripts/PureMVC/Patterns/Observer/Observer.cs" Line="77" Column="1" />
       <File FileName="Assets/scripts/net/NetConsts.cs" Line="5" Column="48" />
+      <File FileName="Assets/scripts/gui/GuiDisplayObject.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="InteractionApp" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="scripts" expanded="True">
-                <Node name="app" expanded="True">
-                  <Node name="plugin" expanded="True">
-                    <Node name="controller" expanded="True" />
-                    <Node name="model" expanded="True" />
-                  </Node>
-                </Node>
-                <Node name="net" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
+        <State expanded="True" selected="True" />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

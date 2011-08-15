@@ -15,16 +15,16 @@ public class FrameworkLoader : AbstractFrameworkLoader {
 			foreach(IPlugin p in plugins){
 				Debug.Log("Bähhhm " + p.GetID() + Random.value);
 			
-				p.registerGameObject(GameObject.Find("Butterfly1"));
-				p.registerGameObject(GameObject.Find("Butterfly2"));
-				p.registerGameObject(GameObject.Find("Butterfly3"));
-				p.registerGameObject(GameObject.Find("Butterfly4"));
-				p.registerGameObject(GameObject.Find("Butterfly5"));
-				p.registerGameObject(GameObject.Find("Butterfly6"));
-				p.registerGameObject(GameObject.Find("Butterfly7"));
-				p.registerGameObject(GameObject.Find("Butterfly8"));
-				p.registerGameObject(GameObject.Find("Butterfly9"));
-				p.registerGameObject(GameObject.Find("Butterfly10"));
+				p.registerGameObject(GameObject.Find("B1"));
+				p.registerGameObject(GameObject.Find("B2"));
+				p.registerGameObject(GameObject.Find("B3"));
+				p.registerGameObject(GameObject.Find("B4"));
+				p.registerGameObject(GameObject.Find("B5"));
+				p.registerGameObject(GameObject.Find("B6"));
+				p.registerGameObject(GameObject.Find("B7"));
+				p.registerGameObject(GameObject.Find("B8"));
+				p.registerGameObject(GameObject.Find("B9"));
+				p.registerGameObject(GameObject.Find("B10"));
 				
 			}
 			
