@@ -38,7 +38,8 @@ function loadPluginList(socket){
         //
         for (var i = 0; i < files.length; ++i) {
            loadFile(files[i],function (filename, data){
-               socket.write(JSON.stringify({id:filename,result:data}));
+               socket.write(JSON.stringify({id:filename,result:data.toString()}));
+               //socket.write(data);
            });
         }
     });
